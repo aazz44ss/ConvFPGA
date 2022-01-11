@@ -17,10 +17,12 @@ It can do 3036 Fixed Point 6 multiplication per cycle by packing 2 of Fixed Poin
 
 ## Architecture of conv_core
 ### Systolic Array
-Broadcasting data from DDR to MAC unit is not friendly for hardware layout, will cause very high latency (20-30 MHz) in order to meet timing requirement. Systolic array wihch only pass data from DDR to PE(0), then PE(0) pass data to PE(1), then PE(1) pass data to PE(2) and so on. In this way, hardware layout can achieve low latency (130-160 MHz) timing requirement, increase throughput by about 5 times.
+Broadcasting data from DDR to MAC unit is not friendly for hardware layout, will cause very high latency (20-30 MHz clocks) in order to meet timing requirement. <br>
+By using systolic array that pass data from DDR to PE(0) to PE(M-1), hardware layout can achieve low latency (130-160 MHz clocks) timing requirement. Can increase throughput by about 5 times compare to broadcast data from DDR. <br>
+Each PE is consist of N multiplier and 4 shift register.
 
 ### Winograd
-Use 1D winograd to increase through put
+Use 1D winograd to increase throughput
 
 ![conv_core_arch](/documents/conv_core.png?raw=true "conv_core")
 
