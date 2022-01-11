@@ -11,8 +11,8 @@ By folding the input feature map to increase number of Fi in first layer to impr
 
 ## Fixed Point 8 or Fixed Point 6
 There are 1518 of 18x19 DSP in Altera 10 FPGA. <br>
-It can only do 759 FP32 multiplication per cycle because it needs 2 of DSP to calculate FP32 multiplication (fraction bits 23 larger than 18). <br>
-It can do 1518 Fixed Point 8 multiplication per cycle because 8 less than 18. <br>
+It can do 759 FP32 multiplication per cycle because it needs 2 of DSP to calculate FP32 multiplication (fraction bits 23 larger than 18). <br>
+It can do 1518 Fixed Point 8 multiplication per cycle (8 less than 18). <br>
 It can do 3036 Fixed Point 6 multiplication per cycle by packing 2 of Fixed Point 6 into 18 Bits integer (FP6_0,6'0,FP6_1)
 
 ## Architecture of conv_core
